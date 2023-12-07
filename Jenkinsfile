@@ -28,7 +28,7 @@ pipeline {
                     sh 'docker rm test || true'
 
                     // Run the Docker container
-                    sh 'docker run -d -p 8089:3000 --name abhi saaru789/nodejs-docker-jenkins:latest'
+                    sh 'docker run -d -p 8089:3000 --name abhishek saaru789/nodejs-docker-jenkins:latest'
                 }
             }
         }
