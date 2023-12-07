@@ -23,7 +23,12 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    docker.image('saaru789/nodejs-docker-jenkins:latest').run('-p 8088:3000 --name test')
+                    // Stop and remove the existing container if it's running
+                    sh 'docker stop test || true'
+                    sh 'docker rm test || true'
+
+                    // Run the Docker container
+                    sh 'docker run -d -p 8088:3000 --name krdeyaar saaru789/nodejs-docker-jenkins:latest'
                 }
             }
         }
