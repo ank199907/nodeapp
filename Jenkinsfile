@@ -23,7 +23,7 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    docker.image('saaru789/nodejs-docker-jenkins:latest').run('-p 8080:3000 --name nodejs-container')
+                    docker.image('saaru789/nodejs-docker-jenkins:latest').run('-p 8088:3000 --name ankit-nodejs-container')
                 }
             }
         }
